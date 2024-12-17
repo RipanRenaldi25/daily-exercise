@@ -150,7 +150,7 @@ main {
     transform: translateY(100px);
     opacity: 0;
     filter: blur(20px);
-    animation: showCarouselContent .8s forwards;
+    animation: showCarouselContent 1.3s forwards;
 }
 
 @keyframes showCarouselContent {
@@ -358,6 +358,12 @@ main {
     cursor: pointer;
 }
 
+.button .button__prev:hover,
+.button .button__next:hover {
+    background-color: rgb(241, 157, 0);
+    transition: background-color .3s;
+}
+
 /* Previous Button */
 .carousel.prev .carousel__list .carousel__item:nth-child(2) {
     z-index: 2;
@@ -421,22 +427,22 @@ main {
     }
 }
 
-.carousel.prev .carousel__item:nth-child(2) .carousel__content-type {
-    animation-delay: 1s;
-}
-
-.carousel.prev .carousel__item:nth-child(2) .carousel__content-title {
-    animation-delay: 1.2s;
-}
-
-.carousel.prev .carousel__item:nth-child(2) .carousel__content-topic {
-    animation-delay: 1.4s;
+.carousel.prev .carousel__item:nth-child(2) .carousel__content-buttons {
+    animation-delay: .5s;
 }
 
 .carousel.prev .carousel__item:nth-child(2) .carousel__content-description {
-    animation-delay: 1.6s;
+    animation-delay: .7s;
 }
 
-.carousel.prev .carousel__item:nth-child(2) .carousel__content-buttons {
-    animation-delay: 1.8s;
+.carousel.prev .carousel__item:nth-child(2) .carousel__content-topic {
+    animation-delay: .9s;
+}
+
+.carousel.prev .carousel__item:nth-child(2) .carousel__content-title {
+    animation-delay: 1.1s;
+}
+
+.carousel.prev .carousel__item:nth-child(2) .carousel__content-type {
+    animation-delay: 1.3s;
 }
