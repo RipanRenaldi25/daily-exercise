@@ -6,8 +6,85 @@
     padding: 0;
 }
 
+
+/* Header */
+header {
+    position: relative;
+    z-index: 1000;
+    color: white;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+header nav ul {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.25rem;
+}
+
 main {
     height: 100vh;
     width: 100vw;
     background-color: black;
+    overflow: hidden;
+}
+
+
+/* Carousel */
+.carousel {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    inset: 0 0 0 0;
+    overflow: hidden;
+}
+
+.carousel .carousel__list .carousel__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel__content {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    color: white;
+    width: 70vw;
+    padding-right: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.carousel__content-type {
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 10px;
+}
+
+.carousel__content-title,
+.carousel__content-topic {
+    font-size: 3.4rem;
+    letter-spacing: 8px;
+}
+
+.carousel__content-topic {
+    color: rgb(241, 157, 0);
+}
+
+.carousel__content-description {
+    font-size: 1.1rem;
 }
