@@ -142,11 +142,11 @@ main {
 
 
 
-.carousel__content-type,
-.carousel__content-title,
-.carousel__content-topic,
-.carousel__content-description,
-.carousel__content-buttons {
+.carousel .carousel__list .carousel__item:nth-child(1) .carousel__content-type,
+.carousel .carousel__list .carousel__item:nth-child(1) .carousel__content-title,
+.carousel .carousel__list .carousel__item:nth-child(1) .carousel__content-topic,
+.carousel .carousel__list .carousel__item:nth-child(1) .carousel__content-description,
+.carousel .carousel__list .carousel__item:nth-child(1) .carousel__content-buttons {
     transform: translateY(100px);
     opacity: 0;
     filter: blur(20px);
@@ -161,23 +161,23 @@ main {
     }
 }
 
-.carousel__content-type {
+.carousel .carousel__list .carousel__item:nth-child(1) .carousel__content-type {
     animation-delay: 1s;
 }
 
-.carousel__content-title {
+.carousel .carousel__list .carousel__item:nth-child(1) .carousel__content-title {
     animation-delay: 1.2s;
 }
 
-.carousel__content-topic {
+.carousel .carousel__list .carousel__item:nth-child(1) .carousel__content-topic {
     animation-delay: 1.4s;
 }
 
-.carousel__content-description {
+.carousel .carousel__list .carousel__item:nth-child(1) .carousel__content-description {
     animation-delay: 1.6s;
 }
 
-.carousel__content-buttons {
+.carousel .carousel__list .carousel__item:nth-child(1) .carousel__content-buttons {
     animation-delay: 1.8s;
 }
 
@@ -399,4 +399,44 @@ main {
     to {
         width: 180px;
     }
+}
+
+.carousel.prev .carousel__item:nth-child(2) .carousel__content-type,
+.carousel.prev .carousel__item:nth-child(2) .carousel__content-title,
+.carousel.prev .carousel__item:nth-child(2) .carousel__content-topic,
+.carousel.prev .carousel__item:nth-child(2) .carousel__content-description,
+.carousel.prev .carousel__item:nth-child(2) .carousel__content-buttons {
+    animation: outCarouselContent 1s forwards;
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+    animation-delay: 2s;
+}
+
+@keyframes outCarouselContent {
+    to {
+        transform: translateY(200px);
+        opacity: 0;
+        filter: blur(20px);
+    }
+}
+
+.carousel.prev .carousel__item:nth-child(2) .carousel__content-type {
+    animation-delay: 1s;
+}
+
+.carousel.prev .carousel__item:nth-child(2) .carousel__content-title {
+    animation-delay: 1.2s;
+}
+
+.carousel.prev .carousel__item:nth-child(2) .carousel__content-topic {
+    animation-delay: 1.4s;
+}
+
+.carousel.prev .carousel__item:nth-child(2) .carousel__content-description {
+    animation-delay: 1.6s;
+}
+
+.carousel.prev .carousel__item:nth-child(2) .carousel__content-buttons {
+    animation-delay: 1.8s;
 }
