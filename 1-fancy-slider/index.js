@@ -11,29 +11,44 @@ const prevButton = document.querySelector('.button__prev');
 const nextButton = document.querySelector('.button__next');
 
 let timeout = null;
+let interval = null;
 
-nextButton.addEventListener('click', () => {
+const slide = (type) => {
     clearTimeout(timeout);
     const carouselItems = document.querySelectorAll('.carousel__item');
     const thumbnails = document.querySelectorAll('.carousel__thumbnail')
+    if (type === 'next') {
+        thumbnailList.appendChild(thumbnails[0])
+        carouselList.appendChild(carouselItems[0])
+        carouselContainerDom.classList.add('next');
+        timeout = setTimeout(() => {
+            carouselContainerDom.classList.remove('next')
+        }, 1000)
+    } else {
+        carouselList.prepend(carouselItems[carouselItems.length - 1])
+        thumbnailList.prepend(thumbnails[thumbnails.length - 1])
+        carouselContainerDom.classList.add('prev');
 
-    thumbnailList.appendChild(thumbnails[0])
-    carouselList.appendChild(carouselItems[0])
-    carouselContainerDom.classList.add('next');
-    timeout = setTimeout(() => {
-        carouselContainerDom.classList.remove('next')
-    }, 1000)
+        timeout = setTimeout(() => {
+            carouselContainerDom.classList.remove('prev')
+        }, 1500)
+    }
+}
+
+nextButton.addEventListener('click', () => {
+    clearInterval(interval)
+    slide('next')
 })
 
 prevButton.addEventListener('click', () => {
-    clearTimeout(timeout);
-    const carouselItems = document.querySelectorAll('.carousel__item');
-    const thumbnails = document.querySelectorAll('.carousel__thumbnail')
-    carouselList.prepend(carouselItems[carouselItems.length - 1])
-    thumbnailList.prepend(thumbnails[thumbnails.length - 1])
-    carouselContainerDom.classList.add('prev');
-
-    timeout = setTimeout(() => {
-        carouselContainerDom.classList.remove('prev')
-    }, 1500)
+    clearInterval(interval)
+    slide('prev')
 })
+
+
+// on load
+window.onload = () => {
+    interval = setInterval(() => {
+        slide('next');
+    }, 4000)
+}
