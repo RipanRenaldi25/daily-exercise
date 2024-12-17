@@ -34,6 +34,7 @@ header nav ul li a {
     font-size: 1.25rem;
 }
 
+
 body {
     overflow: hidden;
 }
@@ -49,6 +50,14 @@ main {
 .carousel {
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel__list {
+    position: relative;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -189,12 +198,11 @@ main {
     display: flex;
     width: max-content;
     gap: 2rem;
-    justify-content: space-between;
     position: absolute;
     left: 50%;
     bottom: 10vh;
     overflow: hidden;
-    z-index: 9999;
+    z-index: 10;
 }
 
 .carousel__thumbnail {
