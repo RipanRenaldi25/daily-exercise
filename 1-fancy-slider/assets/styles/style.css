@@ -253,9 +253,6 @@ main {
     }
 }
 
-.carousel__thumbnail-caption:hover {
-    background-color: red;
-}
 
 .carousel__thumbnail:hover .carousel__thumbnail-caption--title,
 .carousel__thumbnail:hover .carousel__thumbnail-caption--short_description {}
@@ -277,5 +274,55 @@ main {
 @keyframes showCaptionOverlay {
     to {
         height: 30%;
+    }
+}
+
+.carousel__item:nth-child(1) {
+    z-index: 1;
+}
+
+.carousel.next .carousel__item:nth-child(1) img {
+    position: absolute;
+    width: 180px;
+    height: 250px;
+    left: 50%;
+    bottom: 10vh;
+    animation: showCarouselImage 1s forwards;
+}
+
+@keyframes showCarouselImage {
+    to {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.carousel.next .carousel__thumbnail-list {
+    transform: translateX(200px);
+    animation: slideLeft 1s forwards;
+}
+
+@keyframes slideLeft {
+    to {
+        transform: translateX(0);
+    }
+}
+
+.carousel.next .carousel__thumbnail-list .carousel__thumbnail:nth-last-child(1) {
+    animation: showThumbnail 1s forwards;
+    opacity: 0;
+    transform: translateX(100px);
+    filter: blur(20px);
+    width: 0;
+}
+
+@keyframes showThumbnail {
+    to {
+        opacity: 1;
+        width: 180px;
+        filter: blur(0);
+        transform: translateX(0);
     }
 }
