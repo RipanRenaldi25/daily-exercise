@@ -46,8 +46,26 @@ prevButton.addEventListener('click', () => {
 })
 
 
-// on load
+
+const carouselThumbnails = document.querySelectorAll('.carousel__thumbnail');
+const carouselItems = Array.from(
+    document.querySelectorAll('.carousel .carousel__item'));
+
+
+// carouselThumbnails.forEach((thumbnail, index) => {
+//     thumbnail.addEventListener('click', () => {
+//         console.log(index);
+//         clearInterval(interval)
+//         clearTimeout(timeout);
+
+//         carouselItems[0] = carouselItems[index];
+//         console.log({ carouselItems })
+//         slide('next');
+//     })
+// })
+
 window.onload = () => {
+    localStorage.setItem('currentSlider', 0);
     interval = setInterval(() => {
         slide('next');
     }, 4000)
