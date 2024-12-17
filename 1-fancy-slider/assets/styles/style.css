@@ -34,11 +34,14 @@ header nav ul li a {
     font-size: 1.25rem;
 }
 
+body {
+    overflow: hidden;
+}
+
 main {
     height: 100vh;
     width: 100vw;
     background-color: black;
-    overflow: hidden;
 }
 
 
@@ -66,7 +69,7 @@ main {
     padding-right: 20%;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
 }
 
 .carousel__content-type {
@@ -87,6 +90,91 @@ main {
 
 .carousel__content-description {
     font-size: 1.1rem;
+}
+
+.carousel__content-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 15px;
+}
+
+.carousel__content-buttons button {
+    display: flex;
+    gap: 1rem;
+}
+
+.carousel__content-buttons button:hover {
+    cursor: pointer;
+}
+
+
+.carousel__content-buttons--primary {
+    color: black;
+    border: none;
+    padding: .5rem 2.5rem;
+    font-weight: bold;
+    transition: all .3s;
+}
+
+.carousel__content-buttons--secondary {
+    color: white;
+    border: none;
+    padding: .5rem 2.5rem;
+    background-color: transparent;
+    border: 1px solid white;
+    font-weight: bold;
+    transition: all .3s;
+}
+
+.carousel__content-buttons--primary:hover {
+    background-color: black;
+    color: white;
+}
+
+.carousel__content-buttons--secondary:hover {
+    background-color: white;
+    color: black;
+}
+
+
+
+.carousel__content-type,
+.carousel__content-title,
+.carousel__content-topic,
+.carousel__content-description,
+.carousel__content-buttons {
+    transform: translateY(100px);
+    opacity: 0;
+    filter: blur(20px);
+    animation: showCarouselContent .8s forwards;
+}
+
+@keyframes showCarouselContent {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.carousel__content-type {
+    animation-delay: 1s;
+}
+
+.carousel__content-title {
+    animation-delay: 1.2s;
+}
+
+.carousel__content-topic {
+    animation-delay: 1.4s;
+}
+
+.carousel__content-description {
+    animation-delay: 1.6s;
+}
+
+.carousel__content-buttons {
+    animation-delay: 1.8s;
 }
 
 
