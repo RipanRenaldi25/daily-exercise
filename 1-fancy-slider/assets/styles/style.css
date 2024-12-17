@@ -201,7 +201,7 @@ main {
     position: relative;
     width: 180px;
     height: 250px;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
 }
 
@@ -340,6 +340,7 @@ main {
     bottom: 20%;
     left: 30%;
     gap: 1rem;
+    z-index: 99999;
 }
 
 .button button {
@@ -360,4 +361,42 @@ main {
 /* Previous Button */
 .carousel.prev .carousel__list .carousel__item:nth-child(2) {
     z-index: 2;
+}
+
+.carousel.prev .carousel__list .carousel__item:nth-child(2) img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    animation: outCarouselImage 1s forwards;
+}
+
+@keyframes outCarouselImage {
+    to {
+        left: 50%;
+        bottom: 10vh;
+        width: 180px;
+        height: 250px;
+    }
+}
+
+.carousel.prev .carousel__thumbnail-list {
+    transform: translateX(-200px);
+    animation: slideRight 1s forwards;
+}
+
+@keyframes slideRight {
+    to {
+        transform: translateX(0);
+    }
+}
+
+.carousel.prev .carousel__thumbnail-list .carousel__thumbnail:nth-child(1) {
+    animation: showThumbnailPrevious 1s forwards;
+    opacity: 0;
+}
+
+@keyframes showThumbnailPrevious {
+    to {
+        width: 180px;
+    }
 }
